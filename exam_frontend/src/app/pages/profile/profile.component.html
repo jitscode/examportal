@@ -1,0 +1,45 @@
+<mat-card>
+    <div class="ml20 mt20"><mat-card-title>Your Profile Details</mat-card-title></div>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="https://media-exp1.licdn.com/dms/image/D5603AQEnaso9aMpFGQ/profile-displayphoto-shrink_800_800/0/1665459344233?e=2147483647&v=beta&t=hIcz9IYcAkeizN70XHmgVOYpkqNlWGJJcYgVFtbP3pI"
+                        alt="default profile" class="profile-image responsive-img">
+                    <h1 class="mt10"> {{ login.getUser().firstName }} {{ login.getUser().lastName }}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- table data -->
+                        <table class="table">
+                            <tr>
+                                <td><b>Username</b></td>
+                                <td>{{ login.getUser().username }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>User Id</b></td>
+                                <td>exam{{ login.getUser().id }}</td>
+                            </tr>
+                            <tr>
+                                <td><b> Number </b></td>
+                                <td>{{ login.getUser().phone }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Role</b></td>
+                                <td>{{login.getUser().authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Status</b></td>
+                                <td>{{ login.getUser().enabled ? "ACTIVE" : "NOTACTIVE" }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <div class="text-center mt20 mb20">
+        <button mat-raised-button color="primary">UPDATE PROFILE</button>
+    </div>
+
+</mat-card>
